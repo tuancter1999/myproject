@@ -7,13 +7,9 @@ import 'hardhat-watcher'
 const LOW_OPTIMIZER_COMPILER_SETTINGS = {
   version: '0.7.6',
   settings: {
-    evmVersion: 'istanbul',
     optimizer: {
       enabled: true,
-      runs: 2_000,
-    },
-    metadata: {
-      bytecodeHash: 'none',
+      runs: 200,
     },
   },
 }
@@ -21,13 +17,9 @@ const LOW_OPTIMIZER_COMPILER_SETTINGS = {
 const LOWEST_OPTIMIZER_COMPILER_SETTINGS = {
   version: '0.7.6',
   settings: {
-    evmVersion: 'istanbul',
     optimizer: {
       enabled: true,
-      runs: 1_000,
-    },
-    metadata: {
-      bytecodeHash: 'none',
+      runs: 200,
     },
   },
 }
@@ -35,13 +27,9 @@ const LOWEST_OPTIMIZER_COMPILER_SETTINGS = {
 const DEFAULT_COMPILER_SETTINGS = {
   version: '0.7.6',
   settings: {
-    evmVersion: 'istanbul',
     optimizer: {
       enabled: true,
-      runs: 1_000_000,
-    },
-    metadata: {
-      bytecodeHash: 'none',
+      runs: 200,
     },
   },
 }
@@ -51,33 +39,19 @@ export default {
     hardhat: {
       allowUnlimitedContractSize: false,
     },
-    mainnet: {
-      url: `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
+    nebula: {
+      url: "https://rpc-nebulas-testnet.uniultra.xyz/",
+      chainId: 2484,
+      gasPrice: 10000000000,
+      accounts: [`0x85fc659e3f7232c6310b34d99955e836dc11935df3a00951ccba66814133bb0e`],
     },
-    ropsten: {
-      url: `https://ropsten.infura.io/v3/${process.env.INFURA_API_KEY}`,
-    },
-    rinkeby: {
-      url: `https://rinkeby.infura.io/v3/${process.env.INFURA_API_KEY}`,
-    },
-    goerli: {
-      url: `https://goerli.infura.io/v3/${process.env.INFURA_API_KEY}`,
-    },
-    kovan: {
-      url: `https://kovan.infura.io/v3/${process.env.INFURA_API_KEY}`,
-    },
-    arbitrumRinkeby: {
-      url: `https://arbitrum-rinkeby.infura.io/v3/${process.env.INFURA_API_KEY}`,
-    },
-    arbitrum: {
-      url: `https://arbitrum-mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
-    },
-    optimismKovan: {
-      url: `https://optimism-kovan.infura.io/v3/${process.env.INFURA_API_KEY}`,
-    },
-    optimism: {
-      url: `https://optimism-mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
-    },
+    tbc: {
+      url: "https://rpc-testnet.tbcscan.com/",
+      chainId: 1337,
+      accounts: [`0x85fc659e3f7232c6310b34d99955e836dc11935df3a00951ccba66814133bb0e`],
+      gasPrice: 8000000000
+
+    }
   },
   etherscan: {
     // Your API key for Etherscan
