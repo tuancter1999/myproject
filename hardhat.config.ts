@@ -43,8 +43,10 @@ export default {
     nebula: {
       url: "https://rpc-nebulas-testnet.uniultra.xyz/",
       chainId: 2484,
-      gasPrice: 10000000000,
+      // gasPrice: 10000000000,
       accounts: [process.env.PRIVATE_KEY],
+      gas: 7616999,
+      // blockGasLimit: 100000000429720
     },
     tbc: {
       url: "https://rpc-testnet.tbcscan.com/",

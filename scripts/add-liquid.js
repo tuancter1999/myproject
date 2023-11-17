@@ -3,9 +3,9 @@ require('dotenv').config();
 
 // Replace these placeholders with your values
 const privateKey = process.env.PRIVATE_KEY;
-const positionManagerAddress = '0xC09b4B6C45Ec4d4091B079b675842ABc4c2e59b1';
+const positionManagerAddress = '0xCf3116898252a20a60Da81d364FfEd207BAfF4d9';
 const token0Address = '0x85f574e701D1375cF212acdCabCf3CD0A1414B9e';
-const token1Address = '0x003B2a50C925343280e43A8C48D13EDDe2598a9E';
+const token1Address = '0x57a04A81Ca0280268Fb9D6A27D029ED1d935d752';
 
 // Ethereum provider
 const provider = new ethers.providers.JsonRpcProvider('https://rpc-nebulas-testnet.uniultra.xyz/');
