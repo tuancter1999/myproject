@@ -3,6 +3,7 @@ import '@nomiclabs/hardhat-etherscan'
 import '@nomiclabs/hardhat-waffle'
 import 'hardhat-typechain'
 import 'hardhat-watcher'
+require('dotenv').config();
 
 const LOW_OPTIMIZER_COMPILER_SETTINGS = {
   version: '0.7.6',
@@ -43,12 +44,12 @@ export default {
       url: "https://rpc-nebulas-testnet.uniultra.xyz/",
       chainId: 2484,
       gasPrice: 10000000000,
-      accounts: [`0x85fc659e3f7232c6310b34d99955e836dc11935df3a00951ccba66814133bb0e`],
+      accounts: [process.env.PRIVATE_KEY],
     },
     tbc: {
       url: "https://rpc-testnet.tbcscan.com/",
       chainId: 1337,
-      accounts: [`0x85fc659e3f7232c6310b34d99955e836dc11935df3a00951ccba66814133bb0e`],
+      accounts: [process.env.PRIVATE_KEY],
       gasPrice: 8000000000
 
     }
