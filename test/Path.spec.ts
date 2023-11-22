@@ -20,7 +20,7 @@ describe('Path', () => {
 
   const pathTestFixture = async () => {
     const pathTestFactory = await ethers.getContractFactory('PathTest')
-    return (await pathTestFactory.deploy()) as PathTest
+    return (await pathTestFactory.deploy()) as unknown as PathTest
   }
 
   let loadFixture: ReturnType<typeof waffle.createFixtureLoader>

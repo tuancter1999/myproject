@@ -1,16 +1,3 @@
-# U2U V3 Periphery
-
-[![Tests](https://github.com/U2U/U2U-v3-periphery/workflows/Tests/badge.svg)](https://github.com/U2U/U2U-v3-periphery/actions?query=workflow%3ATests)
-[![Lint](https://github.com/U2U/U2U-v3-periphery/workflows/Lint/badge.svg)](https://github.com/U2U/U2U-v3-periphery/actions?query=workflow%3ALint)
-
-This repository contains the periphery smart contracts for the U2U V3 Protocol.
-For the lower level core contracts, see the [U2U-v3-core](https://github.com/U2U/U2U-v3-core)
-repository.
-
-## Bug bounty
-
-This repository is subject to the U2U V3 bug bounty program,
-per the terms defined [here](./bug-bounty.md).
 
 ## Local deployment
 

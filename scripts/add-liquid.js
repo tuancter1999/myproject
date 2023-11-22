@@ -4,8 +4,8 @@ require('dotenv').config();
 // Replace these placeholders with your values
 const privateKey = process.env.PRIVATE_KEY;
 const positionManagerAddress = '0xCf3116898252a20a60Da81d364FfEd207BAfF4d9';
-const token0Address = '0x85f574e701D1375cF212acdCabCf3CD0A1414B9e';
-const token1Address = '0x57a04A81Ca0280268Fb9D6A27D029ED1d935d752';
+const token0Address = '0x0EAa240b42d434D478316b4D80e671AE33587630';
+const token1Address = '0x49eed6E8eF1BB0c8835d5B5F0866eFB4a499DC96';
 
 // Ethereum provider
 const provider = new ethers.providers.JsonRpcProvider('https://rpc-nebulas-testnet.uniultra.xyz/');
@@ -13,10 +13,10 @@ const provider = new ethers.providers.JsonRpcProvider('https://rpc-nebulas-testn
 // Wallet using your private key
 const wallet = new ethers.Wallet(privateKey, provider);
 
-// Uniswap V3 PositionManager contract ABI (you should use the correct ABI)
+// U2U V3 PositionManager contract ABI (you should use the correct ABI)
 const positionManagerABI = require("../artifacts/contracts/v3-periphery/NonfungiblePositionManager.sol/NonfungiblePositionManager.json");
 
-// Uniswap V3 PositionManager contract instance
+// U2U V3 PositionManager contract instance
 const positionManagerContract = new ethers.Contract(positionManagerAddress, positionManagerABI.abi, wallet);
 
 // Example: Create a liquidity position

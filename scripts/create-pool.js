@@ -9,8 +9,8 @@ async function createPool() {
   const factory = await UniswapV3Factory.attach(factoryAddress);
 
   // Token addresses for the two tokens you want to create a pool for
-  const token0 = '0x2626EA244E9015CD143fFaC7A51a0Db2E392830C';
-  const token1 = '0x68eA0076D02AE22C8b6a446081DaD580cCc9f75F';
+  const token0 = '0x99969825C9c18BA93C9998F95c4bB7F6EB5E2c39';
+  const token1 = '0xF2F00ED60982365877989BC53D123B027388E81e';
 
   // Desired fee for the pool (e.g., 0.3%)
   const fee = 3000;
@@ -27,7 +27,7 @@ async function createPool() {
   const recipient = deployer.address;
   const deadline = Math.floor(Date.now() / 1000) + 60 * 10; // Deadline 10 minutes from now
 
-  const sqrtPriceX96 = 281474976710656;
+  const sqrtPriceX96 = '56022770974786139918731938227';
 
   // Create the pool
   const tx = await factory.createAndInitializePoolIfNecessary(
