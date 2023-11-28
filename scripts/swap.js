@@ -6,21 +6,21 @@ async function main() {
   console.log('Deploying from address:', deployer.address);
 
   // Replace these values with your own
-  const tokenInAddress = '0x99969825C9c18BA93C9998F95c4bB7F6EB5E2c39'; // Address of the token you want to swap
-  const tokenOutAddress = '0xF2F00ED60982365877989BC53D123B027388E81e'; // Address of the token you want to receive
-  const amountIn = ethers.utils.parseUnits('1', 18); // Amount in Wei (1 ETH in Wei, for example)
+  const tokenInAddress = '0x22BB25D5Cc6BA10642C9afA3EEb5e4bC6052C757'; // Address of the token you want to swap
+  const tokenOutAddress = '0xB2606029DE4AD7b30c615712726477ED466002d2'; // Address of the token you want to receive
+  const amountIn = ethers.utils.parseUnits('1.1', 18); // Amount in Wei (1 ETH in Wei, for example)
   const deadline = Math.floor(Date.now() / 1000) + 60 * 10; // Deadline 10 minutes from now
 
   // Replace with the actual Uniswap router address
-  const uniswapRouterAddress = '0x8748AC693A143E60Cf7f51b122fECCCD281ed1c6';
+  const uniswapRouterAddress = '0x51a6A6D3F696F0650E4c683d0B2d459ae96f02A4';
 
   // Load the Uniswap Router contract
   const uniswapRouter = await ethers.getContractAt('ISwapRouter', uniswapRouterAddress);
 
   // Swap tokens using exactInputSingle
   const tx = await uniswapRouter.exactInputSingle({
-    tokenIn: tokenOutAddress,
-    tokenOut: tokenInAddress,
+    tokenIn: tokenInAddress,
+    tokenOut: tokenOutAddress,
     fee: 3000, // 0.3% fee
     recipient: deployer.address,
     deadline: deadline,

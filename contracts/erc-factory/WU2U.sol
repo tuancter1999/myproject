@@ -15,9 +15,9 @@
 
 pragma solidity =0.7.6;
 
-contract WETH {
-    string public name     = "Wrapped Timebird Coin";
-    string public symbol   = "WETH";
+contract WU2U {
+    string public name     = "Wrapped U2U";
+    string public symbol   = "WU2U";
     uint8  public decimals = 18;
 
     event  Approval(address indexed src, address indexed guy, uint wad);
