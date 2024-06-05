@@ -7,7 +7,7 @@ const provider = waffle.provider
     let [owner, user, lp] = await hre.ethers.getSigners()
     console.log(owner.address)
     console.log(await provider.getBalance(owner.address))
-    const factoryContract = await ethers.getContractFactory("ERC20Factory")
+    const factoryContract = await ethers.getContractFactory("WU2U")
     const factoryContractIns = await factoryContract.deploy()
     console.log('Factory address: ', factoryContractIns.address)
 

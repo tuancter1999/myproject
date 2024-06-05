@@ -6,9 +6,9 @@ async function main() {
   console.log('Deploying from address:', deployer.address);
 
   // Replace these values with your own
-  const tokenInAddress = '0x22BB25D5Cc6BA10642C9afA3EEb5e4bC6052C757'; // Address of the token you want to swap
-  const tokenOutAddress = '0xB2606029DE4AD7b30c615712726477ED466002d2'; // Address of the token you want to receive
-  const amountIn = ethers.utils.parseUnits('1.1', 18); // Amount in Wei (1 ETH in Wei, for example)
+  const tokenInAddress = '0xB2606029DE4AD7b30c615712726477ED466002d2'; // Address of the token you want to swap
+  const tokenOutAddress = '0x22bb25d5cc6ba10642c9afa3eeb5e4bc6052c757'; // Address of the token you want to receive
+  const amountIn = ethers.utils.parseUnits('10', 18); // Amount in Wei (1 ETH in Wei, for example)
   const deadline = Math.floor(Date.now() / 1000) + 60 * 10; // Deadline 10 minutes from now
 
   // Replace with the actual Uniswap router address
@@ -27,7 +27,7 @@ async function main() {
     amountIn: amountIn,
     amountOutMinimum: 0,
     sqrtPriceLimitX96: 0,
-  }, { gasLimit: 300000 });
+  }, {value: ethers.utils.parseUnits('5', 18), gasLimit: 300000 });
 
   console.log('Transaction hash:', tx.hash);
 

@@ -3,9 +3,9 @@ require('dotenv').config();
 
 // Replace these placeholders with your values
 const privateKey = process.env.PRIVATE_KEY;
-const positionManagerAddress = '0xCf3116898252a20a60Da81d364FfEd207BAfF4d9';
-const token0Address = '0x0EAa240b42d434D478316b4D80e671AE33587630';
-const token1Address = '0x49eed6E8eF1BB0c8835d5B5F0866eFB4a499DC96';
+const positionManagerAddress = '0x798b115d5fb4cBbD1708af6A16a77239C1005CAe';
+const token1Address = '0xC5f15624b4256C1206e4BB93f2CCc9163A75b703';
+const token0Address = '0xdFAe88F8610a038AFcDF47A5BC77C0963C65087c';
 
 // Ethereum provider
 const provider = new ethers.providers.JsonRpcProvider('https://rpc-nebulas-testnet.uniultra.xyz/');
@@ -24,12 +24,12 @@ async function createPosition() {
   const tokenId = await positionManagerContract.mint({
     token0: token0Address,
     token1: token1Address,
-    fee: 3000, // 0.3% fee
+    fee: 500, // 0.3% fee
     tickLower: -887220,
     tickUpper: -887200,
-    amount0Desired: ethers.utils.parseUnits('1', 18), // Replace with the desired amount of token0
-    amount1Desired: 0, // Replace with the desired amount of token1
-    amount0Min: ethers.utils.parseUnits('1', 18),
+    amount0Desired: ethers.utils.parseUnits('10', 18), // Replace with the desired additional amount of token0
+    amount1Desired: ethers.utils.parseUnits('0.1', 18), // Replace with the desired amount of token1
+    amount0Min: 0,
     amount1Min: 0,
     recipient: wallet.address,
     // deadline: Math.floor(Date.now() / 1000)
@@ -43,12 +43,12 @@ async function createPosition() {
 async function increaseLiquidity(tokenId) {
   await positionManagerContract.increaseLiquidity({
     tokenId,
-    amount0Desired: ethers.utils.parseUnits('50', 18), // Replace with the desired additional amount of token0
-    amount1Desired: ethers.utils.parseUnits('100', 18), // Replace with the desired additional amount of token1
+    amount0Desired: ethers.utils.parseUnits('10', 18), // Replace with the desired additional amount of token0
+    amount1Desired: ethers.utils.parseUnits('0.1', 18), // Replace with the desired additional amount of token1
     amount0Min: 0,
     amount1Min: 0,
     deadline: Math.floor(Date.now() / 1000) + 60 * 10, // Deadline 10 minutes from now
-  });
+  }, {value: ethers.utils.parseUnits('5', 18), gasLimit: 2100000});
 
   console.log('Increased Liquidity for Token ID:', tokenId.toString());
 }
